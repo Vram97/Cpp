@@ -35,17 +35,19 @@ public:
             // TreeNode* st=ll;
 
             traverse(root);
-            root=v[0];
+            root->left=NULL;
+            
             if(v.size()>1){
-                cout<<root->right->val<<endl;
+                root->right=v[1];
+                // cout<<root->right->val<<endl;
             }
             
             return;
             // root=ll->right;
             // cout<<root->right->val;
-            for(auto x:v){
-                cout<<x->val<<endl;
-            }
+            // for(auto x:v){
+            //     cout<<x->val<<endl;
+            // }
         }
         else{
             return;
