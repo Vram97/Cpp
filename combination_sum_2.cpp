@@ -19,7 +19,7 @@ public:
                     continue;
                 }
                 temp.push_back(cand[i]);
-                combo(cand,temp,sum+cand[i],i+1,target-);
+                combo(cand,temp,sum+cand[i],i+1,target);
                 temp.pop_back();
             }
         }
