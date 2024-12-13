@@ -13,8 +13,8 @@ public:
         int i=0;
         int j=0;
         // v[i][j]=matrix[i][j];
-        ans.emplace_back(matrix[i][j]);
-        matrix[i][j]=-101;
+        ans.emplace_back(matrix[0][0]);
+        matrix[0][0]=-101;
         int count=0;
 
         while(true){
@@ -22,25 +22,13 @@ public:
             int temp_i=dir[state].first+i;
             int temp_j=dir[state].second+j;
 
-            if((temp_i>=0 && temp_i<rows) && (temp_j>=0 && temp_j<cols)){
-                if(matrix[temp_i][temp_j]!=-101){
-                    i=temp_i;
-                    j=temp_j;
-                    ans.emplace_back(matrix[i][j]);
-                    matrix[i][j]=-101;
-                    count=0;
-                }
-                else{
-                    count++;
-                    if(state!=3){
-                        state++;
-                    }
-                    else{
-                        state=0;
-                    }
-                }
-                // v[temp_i][temp_j]=matrix[temp_i][temp_j];
-                // matrix[temp_i][temp_j]=matrix[i][j];
+            if((temp_i>=0 && temp_i<rows) && (temp_j>=0 && temp_j<cols) && matrix[temp_i][temp_j]!=-101){
+    
+                i=temp_i;
+                j=temp_j;
+                ans.emplace_back(matrix[i][j]);
+                matrix[i][j]=-101;
+                count=0;
             }
             else{
                 count++;
